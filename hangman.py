@@ -13,10 +13,11 @@ db = SQLAlchemy(app)
 # Model
 
 def random_pk():
-    return random.randint(1e9, 1e10)
+    return random.randint(int(1e9), int(1e10))
 
 def random_word():
-    words = [line.strip() for line in open('words.txt') if len(line) > 10]
+    with open('words.txt') as f:
+        words = [line.strip() for line in f if len(line) > 10]
     return random.choice(words).upper()
 
 class Game(db.Model):
@@ -88,7 +89,7 @@ def play(game_id):
         if len(letter) == 1 and letter.isalpha():
             game.try_letter(letter)
 
-    if flask.request.is_xhr:
+    if flask.request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         return flask.jsonify(current=game.current,
                              errors=game.errors,
                              finished=game.finished)
