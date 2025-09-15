@@ -2,18 +2,27 @@
 
 To complete the 2nd and 3rd part of this assignment, I made a hangman game using flask and hosted it locally on a docker container.
 
-## I created a Dockerfile as seen in the repo above. And ran:
+# Part #2
 
-docker build -t bolt162/hangman:latest
+## I created a Dockerfile as seen in the repo above and built the docker image using:
+
+docker build -t bolt162/hangman:latest .
 
 <img width="1260" height="618" alt="Screenshot 2025-09-14 at 1 53 56 PM" src="https://github.com/user-attachments/assets/88ababa2-f0f4-4a8d-a5fe-98534e911f31" />
 
 
-## Option 1: Ubuntu packages
+## The second step was to write down unit tests and run them to ensure that the game does not have edge cases where the applicaiton would crash. The test files are available in the tests/ repository and I ran the following command to run those tests:
 
-    sudo apt-get install python-flask python-flask-sqlalchemy
+docker run —rm bolt162/hangman: latest python -m unittest discover -s tests
 
-## Option 2: pip
+<img width="1279" height="130" alt="Screenshot 2025-09-14 at 1 59 35 PM" src="https://github.com/user-attachments/assets/62b4706c-6624-44be-a134-7ddecf4f8bb2" />
+
+
+## The last step was to push the image to the registry with:
+
+docker push bolt162/hangman:latest
+
+<img width="774" height="229" alt="Screenshot 2025-09-14 at 2 05 46 PM" src="https://github.com/user-attachments/assets/f37834cb-a6a1-4670-a81e-00700f3da3af" />
 
 [Install pip](https://pip.pypa.io/en/stable/installing/), then:
 
