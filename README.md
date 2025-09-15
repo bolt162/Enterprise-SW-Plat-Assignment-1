@@ -49,16 +49,16 @@ Docker:
 <img width="683" height="754" alt="Screenshot 2025-09-14 at 7 40 15 PM" src="https://github.com/user-attachments/assets/bf0ea8b2-5a60-4bcd-bae9-9e69ded13971" />
 
 
-## Benchmark Results: Hangman Application (Docker vs. Valgrand VM)
+## Benchmark Results: Hangman Application (Docker vs. Vagrant VM)
 
-| Metric | Docker | Valgrand VM | Difference/Notes |
+| Metric | Docker | Vagrant VM | Difference/Notes |
 |--------|--------|-------------|------------------|
 | Server Software | Werkzeug/3.1.3 | Werkzeug/2.0.3 | Different versions; may affect performance. |
 | Port | 4000 | 5000 | N/A |
 | Document Length | 5521 bytes | 1319 bytes | Docker serves larger responses. |
 | Time Taken | 2.633 s | 20.220 s | Docker ~7.7x faster. |
 | Complete Requests | 1000 | 1000 | Identical. |
-| Failed Requests | 0 | 1 (Length: 1) | Valgrand had one failure. |
+| Failed Requests | 0 | 1 (Length: 1) | Vagrant had one failure. |
 | Total Transferred | 5,859,000 bytes | 1,508,334 bytes | Higher in Docker due to document size. |
 | HTML Transferred | 5,521,000 bytes | 1,353,297 bytes | Higher in Docker due to document size. |
 | Requests per Second | 379.72 [#/sec] | 49.46 [#/sec] | Docker ~7.7x higher throughput. |
@@ -69,7 +69,7 @@ Docker:
 | Processing Time (min/mean/sd/max) | 15/26/6.1/73 ms | 92/201/46.4/612 ms | Docker faster, less variable. |
 | Waiting Time (min/mean/sd/max) | 2/12/5.4/46 ms | 91/195/45.3/612 ms | Docker lower latency. |
 | Total Time (min/mean/sd/max) | 15/26/6.1/73 ms | 92/201/46.4/612 ms | Docker ~7.7x lower mean time. |
-| Latency Percentiles | Not provided | 50%: 200 ms, 75%: 226 ms, 90%: 259 ms, 95%: 279 ms | Valgrand higher tail latencies. |
+| Latency Percentiles | Not provided | 50%: 200 ms, 75%: 226 ms, 90%: 259 ms, 95%: 279 ms | Vagrant higher tail latencies. |
 
 ## Conclusion
-The Hangman application performs significantly better in Docker, with ~7.7x higher requests per second, lower latency, and faster test completion with no failed requests. Docker's lightweight containerization likely reduces overhead compared to Valgrand's VM setup. Differences may also stem from Werkzeug versions or configurations. Memory usage wasn't measured—use tools like Valgrind or Docker stats for further analysis. Docker appears more scalable, but additional tests with identical setups or varied loads are recommended.
+The Hangman application performs significantly better in Docker, with ~7.7x higher requests per second, lower latency, and faster test completion with no failed requests. Docker's lightweight containerization likely reduces overhead compared to Vagrant's VM setup. Differences may also stem from Werkzeug versions or configurations. Docker appears more scalable, but additional tests with identical setups or varied loads are recommended.
