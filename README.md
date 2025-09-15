@@ -36,13 +36,15 @@ python3 hangman.py
 <img width="711" height="365" alt="Screenshot 2025-09-14 at 7 38 45 PM" src="https://github.com/user-attachments/assets/337dd55c-5663-456e-a6c5-cff5449c25a0" />
 
 
-## Request Throughput/Response Time: Used ab (ApacheBench) for load testing: ab -n 1000 -c 10 http://<ip>:<port>/
+## Request Throughput/Response Time: Used ab (ApacheBench) for load testing: ab -n 1000 -c 10 http://ip:port/
 
 Vagrant:
+
 <img width="685" height="757" alt="Screenshot 2025-09-14 at 7 39 40 PM" src="https://github.com/user-attachments/assets/05f18e71-48ef-4fdb-94b2-bf572d73446a" />
 <img width="681" height="345" alt="Screenshot 2025-09-14 at 7 39 50 PM" src="https://github.com/user-attachments/assets/35c40c0c-8a16-420f-8508-6a82bcf86bfe" />
 
 Docker:
+
 <img width="683" height="148" alt="Screenshot 2025-09-14 at 7 40 06 PM" src="https://github.com/user-attachments/assets/9254a8c0-f5ac-4446-a0e5-752e045664c2" />
 <img width="683" height="754" alt="Screenshot 2025-09-14 at 7 40 15 PM" src="https://github.com/user-attachments/assets/bf0ea8b2-5a60-4bcd-bae9-9e69ded13971" />
 
