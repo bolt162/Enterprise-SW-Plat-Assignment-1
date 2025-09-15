@@ -2,7 +2,7 @@
 
 To complete the 2nd and 3rd part of this assignment, I made a hangman game using flask and hosted it locally on a docker container.
 
-I created a Dockerfile as seen in the repo above. And ran:
+## I created a Dockerfile as seen in the repo above. And ran:
 
 docker build -t bolt162/hangman:latest
 
