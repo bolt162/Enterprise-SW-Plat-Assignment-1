@@ -16,4 +16,4 @@ RUN python init_db.py || true
 EXPOSE 5000
 
 # Use gunicorn for a multi-worker, production-like server
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "hangman:app", "--workers", "2", "--timeout", "30"]
+CMD python init_db.py && gunicorn -b 0.0.0.0:5000 hangman:app --workers 2 --timeout 30
