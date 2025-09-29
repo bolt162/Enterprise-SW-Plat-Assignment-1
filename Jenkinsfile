@@ -33,7 +33,7 @@ pipeline {
                 sh 'docker stop hangman-app || true'
                 sh 'docker rm hangman-app || true'
                 // Run the new container
-                sh 'docker run -d --name hangman-app -p 5000:5000 bolt162/hangman:latest'
+                sh 'docker run -d --name hangman-app -p 5001:5000 bolt162/hangman:latest'
             }
         }
         stage('Push Docker Image') {
