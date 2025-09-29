@@ -27,6 +27,15 @@ pipeline {
                 }
             }
         }
+        stage('Deploy') {
+            steps {
+                // Stop any running container with the same name
+                sh 'docker stop hangman-app || true'
+                sh 'docker rm hangman-app || true'
+                // Run the new container
+                sh 'docker run -d --name hangman-app -p 5000:5000 bolt162/hangman:latest'
+            }
+        }
         stage('Push Docker Image') {
             when {
                 branch 'main'
